@@ -12,7 +12,6 @@ use it\thecsea\osticket_php_client\OsticketPhpClientException;
 
 abstract class Request
 {
-
     /*
      * string[]
      */
@@ -29,9 +28,10 @@ abstract class Request
     protected $client;
 
     /**
+     * Intentionally made public as this is the only way to set more fields in the support request like attachments, source etc.
      * @param $data
      */
-    protected function setDefaultData($data){
+    public function setDefaultData($data){
         $this->data = $data;
         $this->keys = array_keys($this->data);
     }
