@@ -65,7 +65,7 @@ abstract class Request
     function __call($name, $arguments)
     {
         $nameData = substr($name,strlen('with'));
-        if(strtolower(substr($name,0,strlen('with'))) == "with" && isset($this->data[lcfirst($nameData)]) && count($arguments) == 1 && is_string($arguments[0])) {
+        if(strtolower(substr($name,0,strlen('with'))) == "with" && isset($this->data[lcfirst($nameData)]) && count($arguments) == 1) {
             $this->data[lcfirst($nameData)] = $arguments[0];
             return $this;
         }
