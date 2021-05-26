@@ -30,19 +30,19 @@ Rest php client for [osticket](http://osticket.com/)
 use it\thecsea\osticket_php_client\OsticketPhpClient;
 use it\thecsea\osticket_php_client\OsticketPhpClientException;
 
-$support = new OsticketPhpClient($url, $apiKey);
+$client= new OsticketPhpClient($url, $apiKey);
 try{
   $response = $client->newTicket()
-              ->withName('test')
-              ->withEmail('test@test.com')
+              ->withName('John Doe')
+              ->withEmail('test@example.com')
               ->withPhone('0123456789')
               ->withSubject('subject')
               ->withMessage('message')
-              ->withTopicId('1')
+              ->withTopicId(1)
               ->getData();
   print $response;
 }catch(OsticketPhpClientException $e){
-  print $->getMessage();
+  print $e->getMessage();
 }
 ```
 Of course you can perform the request without inserting all fields.  
