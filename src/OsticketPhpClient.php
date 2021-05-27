@@ -114,7 +114,7 @@ class OsticketPhpClient
         if ($res->getStatusCode() != 201)
             throw new OsticketPhpClientException("Server error: " . $res->getStatusCode());
         try {
-            return \GuzzleHttp\Utils::jsonDecode($res->getBody()->getContents(), true);
+            return $res->getBody()->getContents();
         }catch(\Exception $e){
             throw new OsticketPhpClientException("Error during parsing response",0,$e);
         }
