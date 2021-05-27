@@ -1,5 +1,5 @@
 {
-  "name": "thecsea/osticket-php-client",
+  "name": "tricoos/osticket-php-client",
   "description": "Rest php client for osticket",
   "minimum-stability": "stable",
   "keywords": [
