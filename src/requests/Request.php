@@ -50,9 +50,16 @@ abstract class Request
      */
     public function withData($data)
     {
-        $data = array_merge($this->data, $data);
-        foreach ($this->keys as $key)
+        foreach($data as $key => $value) {
+            $this->data[$key] = $value;
+        }
+        
+        $this->keys = array_keys($this->data);
+        
+        foreach ($this->keys as $key) {
             $this->data[$key] = $data[$key];
+        }
+        
         return $this;
     }
 
